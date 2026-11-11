@@ -1,0 +1,42 @@
+PRIMER CROSS-REACTIVITY ANALYSIS
+============================================================
+Forward primer hits analysed: 20
+Reverse primer hits analysed: 20
+Common accessions: 3
+
+POTENTIAL OFF-TARGET PCR PRODUCTS
+============================================================
+
+Candidate 1
+Accession: PX660077.1
+Sequence: PX660077.1 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase (GAPDH)
+Forward primer position: 20-38
+Reverse primer position: 65-82
+Forward identity: 19/19
+Reverse identity: 18/18
+Potential product size: 63 bp
+Interpretation: Candidate requiring further investigation.
+
+Candidate 2
+Accession: NG_125030.1
+Sequence: NG_125030.1 Homo sapiens NANOG-H3K27ac-H3K4me1 hESC enhancer GRCh37_chr12:6643463-6644236
+Forward primer position: 340-358
+Reverse primer position: 625-642
+Forward identity: 19/19
+Reverse identity: 18/18
+Potential product size: 303 bp
+Interpretation: Candidate requiring further investigation.
+
+Candidate 3
+Accession: OQ420599.1
+Sequence: OQ420599.1 Chenopodium album GAPDH mRNA, complete cds
+Forward primer position: 1-19
+Reverse primer position: 46-63
+Forward identity: 19/19
+Reverse identity: 18/18
+Potential product size: 63 bp
+Interpretation: Candidate requiring further investigation.
+
+============================================================
+NOTE: This is a preliminary analysis of the reported BLAST alignments.
+The report is limited to the hits returned by BLAST and does not prove or exclude experimental amplification.

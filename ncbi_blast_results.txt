@@ -1,0 +1,621 @@
+<p><!--
+QBlastInfoBegin
+	Status=READY
+QBlastInfoEnd
+--><p>
+<PRE>
+
+BLASTN 2.17.0+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
+A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
+David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
+generation of protein database search programs", Nucleic
+Acids Res. 25:3389-3402.
+
+
+RID: F99VE1CU014
+
+
+Database: Core nucleotide BLAST database
+           132,660,980 sequences; 1,094,251,079,178 total letters
+Query= Forward_Primer
+
+Length=19
+
+
+                                                                   Score     E     Max
+Sequences producing significant alignments:                       (Bits)  Value  Ident
+
+CP109296.1 Streptomyces sp. NBC_01620 chromosome, complete genome  38.2    7.1    100%      
+OQ420599.1 Chenopodium album GAPDH mRNA, complete cds              38.2    7.1    100%      
+XM_034967683.3 PREDICTED: Pan paniscus glyceraldehyde-3-phosph...  38.2    7.1    100%      
+XM_008973732.4 PREDICTED: Pan paniscus glyceraldehyde-3-phosph...  38.2    7.1    100%      
+XM_055280959.2 PREDICTED: Symphalangus syndactylus glyceraldeh...  38.2    7.1    100%      
+PX660077.1 Homo sapiens glyceraldehyde-3-phosphate dehydrogena...  38.2    7.1    100%      
+XM_069947419.1 PREDICTED: Dendropsophus ebraccatus uncharacter...  38.2    7.1    100%      
+AP024646.1 Arthrobacter sp. StoSoilB5 DNA, complete genome         38.2    7.1    100%      
+XM_055280957.2 PREDICTED: Symphalangus syndactylus glyceraldeh...  38.2    7.1    100%      
+XM_032159408.2 PREDICTED: Hylobates moloch glyceraldehyde-3-ph...  38.2    7.1    100%      
+XM_003273723.4 PREDICTED: Nomascus leucogenys glyceraldehyde-3...  38.2    7.1    100%      
+XM_008973731.3 PREDICTED: Pan paniscus glyceraldehyde-3-phosph...  38.2    7.1    100%      
+XM_063593318.1 PREDICTED: Pan paniscus glyceraldehyde-3-phosph...  38.2    7.1    100%      
+XM_055291316.2 PREDICTED: Symphalangus syndactylus glyceraldeh...  38.2    7.1    100%      
+CP109169.1 Streptomyces sp. NBC_01724 chromosome, complete genome  38.2    7.1    100%      
+XM_032755366.2 PREDICTED: Hylobates moloch glyceraldehyde-3-ph...  38.2    7.1    100%      
+XM_032159407.2 PREDICTED: Hylobates moloch glyceraldehyde-3-ph...  38.2    7.1    100%      
+XM_055280958.2 PREDICTED: Symphalangus syndactylus glyceraldeh...  38.2    7.1    100%      
+XM_003819132.5 PREDICTED: Pan paniscus glyceraldehyde-3-phosph...  38.2    7.1    100%      
+NG_125030.1 Homo sapiens NANOG-H3K27ac-H3K4me1 hESC enhancer G...  38.2    7.1    100%      
+
+ALIGNMENTS
+>CP109296.1 Streptomyces sp. NBC_01620 chromosome, complete genome
+Length=9465816
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  1        CGACAGTCAGCCGCATCTT  19
+                |||||||||||||||||||
+Sbjct  6619954  CGACAGTCAGCCGCATCTT  6619936
+
+
+>OQ420599.1 Chenopodium album GAPDH mRNA, complete cds
+Length=1198
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  1   CGACAGTCAGCCGCATCTT  19
+
+
+>XM_034967683.3 PREDICTED: Pan paniscus glyceraldehyde-3-phosphate dehydrogenase-like 
+(LOC100992568), mRNA
+Length=1330
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  37  CGACAGTCAGCCGCATCTT  55
+
+
+>XM_008973732.4 PREDICTED: Pan paniscus glyceraldehyde-3-phosphate dehydrogenase 
+(GAPDH), transcript variant X3, mRNA
+Length=1372
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  15  CGACAGTCAGCCGCATCTT  33
+
+
+>XM_055280959.2 PREDICTED: Symphalangus syndactylus glyceraldehyde-3-phosphate 
+dehydrogenase (GAPDH), transcript variant X3, mRNA
+Length=1313
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1    CGACAGTCAGCCGCATCTT  19
+            |||||||||||||||||||
+Sbjct  105  CGACAGTCAGCCGCATCTT  123
+
+
+>PX660077.1 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase (GAPDH) 
+mRNA, partial cds
+Length=133
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  20  CGACAGTCAGCCGCATCTT  38
+
+
+>XM_069947419.1 PREDICTED: Dendropsophus ebraccatus uncharacterized oxidoreductase 
+YrbE-like (LOC138769157), mRNA
+Length=1322
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1    CGACAGTCAGCCGCATCTT  19
+            |||||||||||||||||||
+Sbjct  160  CGACAGTCAGCCGCATCTT  178
+
+
+>AP024646.1 Arthrobacter sp. StoSoilB5 DNA, complete genome
+Length=5299525
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  1        CGACAGTCAGCCGCATCTT  19
+                |||||||||||||||||||
+Sbjct  2335438  CGACAGTCAGCCGCATCTT  2335420
+
+
+>XM_055280957.2 PREDICTED: Symphalangus syndactylus glyceraldehyde-3-phosphate 
+dehydrogenase (GAPDH), transcript variant X1, mRNA
+Length=1375
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1    CGACAGTCAGCCGCATCTT  19
+            |||||||||||||||||||
+Sbjct  113  CGACAGTCAGCCGCATCTT  131
+
+
+>XM_032159408.2 PREDICTED: Hylobates moloch glyceraldehyde-3-phosphate dehydrogenase 
+(GAPDH), transcript variant X2, mRNA
+Length=1378
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  21  CGACAGTCAGCCGCATCTT  39
+
+
+>XM_003273723.4 PREDICTED: Nomascus leucogenys glyceraldehyde-3-phosphate dehydrogenase 
+(GAPDH), mRNA
+Length=1328
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  63  CGACAGTCAGCCGCATCTT  81
+
+
+>XM_008973731.3 PREDICTED: Pan paniscus glyceraldehyde-3-phosphate dehydrogenase 
+(GAPDH), transcript variant X2, mRNA
+Length=1482
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1    CGACAGTCAGCCGCATCTT  19
+            |||||||||||||||||||
+Sbjct  217  CGACAGTCAGCCGCATCTT  235
+
+
+>XM_063593318.1 PREDICTED: Pan paniscus glyceraldehyde-3-phosphate dehydrogenase 
+(GAPDH), transcript variant X1, mRNA
+Length=1431
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  59  CGACAGTCAGCCGCATCTT  77
+
+
+>XM_055291316.2 PREDICTED: Symphalangus syndactylus glyceraldehyde-3-phosphate 
+dehydrogenase-like (LOC129488774), mRNA
+Length=682
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  20  CGACAGTCAGCCGCATCTT  38
+
+
+>CP109169.1 Streptomyces sp. NBC_01724 chromosome, complete genome
+Length=9284291
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1        CGACAGTCAGCCGCATCTT  19
+                |||||||||||||||||||
+Sbjct  2777997  CGACAGTCAGCCGCATCTT  2778015
+
+
+>XM_032755366.2 PREDICTED: Hylobates moloch glyceraldehyde-3-phosphate dehydrogenase-like 
+(LOC116810659), mRNA
+Length=666
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  4   CGACAGTCAGCCGCATCTT  22
+
+
+>XM_032159407.2 PREDICTED: Hylobates moloch glyceraldehyde-3-phosphate dehydrogenase 
+(GAPDH), transcript variant X1, mRNA
+Length=1376
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1    CGACAGTCAGCCGCATCTT  19
+            |||||||||||||||||||
+Sbjct  111  CGACAGTCAGCCGCATCTT  129
+
+
+>XM_055280958.2 PREDICTED: Symphalangus syndactylus glyceraldehyde-3-phosphate 
+dehydrogenase (GAPDH), transcript variant X2, mRNA
+Length=1404
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1   CGACAGTCAGCCGCATCTT  19
+           |||||||||||||||||||
+Sbjct  50  CGACAGTCAGCCGCATCTT  68
+
+
+>XM_003819132.5 PREDICTED: Pan paniscus glyceraldehyde-3-phosphate dehydrogenase 
+(LOC100991849), mRNA
+Length=1470
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1    CGACAGTCAGCCGCATCTT  19
+            |||||||||||||||||||
+Sbjct  179  CGACAGTCAGCCGCATCTT  197
+
+
+>NG_125030.1 Homo sapiens NANOG-H3K27ac-H3K4me1 hESC enhancer GRCh37_chr12:6643463-6644236 
+(LOC127823509) on chromosome 12
+Length=974
+
+ Score = 38.2 bits (19),  Expect = 7.1
+ Identities = 19/19 (100%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  1    CGACAGTCAGCCGCATCTT  19
+            |||||||||||||||||||
+Sbjct  340  CGACAGTCAGCCGCATCTT  358
+
+
+Query= Reverse_Primer
+
+Length=18
+
+
+                                                                   Score     E     Max
+Sequences producing significant alignments:                       (Bits)  Value  Ident
+
+OZ509185.1 MAG: Pyrinomonadaceae bacterium isolate MFD15050.bi...  36.2    28     100%      
+MH534385.1 Homo sapiens chr5:57190160-57190154 non-reference u...  36.2    28     100%      
+NM_001289745.3 Homo sapiens glyceraldehyde-3-phosphate dehydro...  36.2    28     100%      
+OQ420599.1 Chenopodium album GAPDH mRNA, complete cds              36.2    28     100%      
+NM_001357943.2 Homo sapiens glyceraldehyde-3-phosphate dehydro...  36.2    28     100%      
+PX660077.1 Homo sapiens glyceraldehyde-3-phosphate dehydrogena...  36.2    28     100%      
+AK308198.1 Homo sapiens cDNA, FLJ98146                             36.2    28     100%      
+AK299448.1 Homo sapiens cDNA FLJ58855 complete cds, highly sim...  36.2    28     100%      
+LK064748.1 Apteryx australis mantelli genome assembly AptMant0...  36.2    28     100%      
+OZ521085.1 MAG: Gammaproteobacteria bacterium isolate MFD15184...  36.2    28     100%      
+AY633612.1 Homo sapiens aging-associated gene 9 protein mRNA, ...  36.2    28     100%      
+BC002547.1 Homo sapiens dyskeratosis congenita 1, dyskerin, mR...  36.2    28     100%      
+NR_152150.2 Homo sapiens glyceraldehyde-3-phosphate dehydrogen...  36.2    28     100%      
+BC021020.1 Synthetic construct Homo sapiens cDNA clone IMAGE:3...  36.2    28     100%      
+OZ508053.1 MAG: Pyrinomonadaceae bacterium isolate MFD15031.bi...  36.2    28     100%      
+BC011866.1 Synthetic construct Homo sapiens cDNA clone IMAGE:4...  36.2    28     100%      
+EU668321.1 Homo sapiens epididymis secretory sperm binding pro...  36.2    28     100%      
+BC023632.2 Homo sapiens glyceraldehyde-3-phosphate dehydrogena...  36.2    28     100%      
+NG_007073.2 Homo sapiens glyceraldehyde-3-phosphate dehydrogen...  36.2    28     100%      
+NG_125030.1 Homo sapiens NANOG-H3K27ac-H3K4me1 hESC enhancer G...  36.2    28     100%      
+
+ALIGNMENTS
+>OZ509185.1 MAG: Pyrinomonadaceae bacterium isolate MFD15050.bin.c.2 genome 
+assembly, chromosome: 1
+Length=5266258
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1       CCCCATGGTGTCTGAGCG  18
+               ||||||||||||||||||
+Sbjct  560350  CCCCATGGTGTCTGAGCG  560333
+
+
+>MH534385.1 Homo sapiens chr5:57190160-57190154 non-reference unique insertion 
+sequence
+Length=1317
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  83  CCCCATGGTGTCTGAGCG  66
+
+
+>NM_001289745.3 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase (GAPDH), 
+transcript variant 3, mRNA
+Length=1377
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1    CCCCATGGTGTCTGAGCG  18
+            ||||||||||||||||||
+Sbjct  174  CCCCATGGTGTCTGAGCG  157
+
+
+>OQ420599.1 Chenopodium album GAPDH mRNA, complete cds
+Length=1198
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  63  CCCCATGGTGTCTGAGCG  46
+
+
+>NM_001357943.2 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase (GAPDH), 
+transcript variant 7, mRNA
+Length=1231
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  82  CCCCATGGTGTCTGAGCG  65
+
+
+>PX660077.1 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase (GAPDH) 
+mRNA, partial cds
+Length=133
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  82  CCCCATGGTGTCTGAGCG  65
+
+
+>AK308198.1 Homo sapiens cDNA, FLJ98146
+Length=1220
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  82  CCCCATGGTGTCTGAGCG  65
+
+
+>AK299448.1 Homo sapiens cDNA FLJ58855 complete cds, highly similar to Glyceraldehyde-3-phosphate 
+dehydrogenase (EC 1.2.1.12)
+Length=929
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  79  CCCCATGGTGTCTGAGCG  62
+
+
+>LK064748.1 Apteryx australis mantelli genome assembly AptMant0, scaffold 
+scaffold176
+Length=763480
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1       CCCCATGGTGTCTGAGCG  18
+               ||||||||||||||||||
+Sbjct  700332  CCCCATGGTGTCTGAGCG  700315
+
+
+>OZ521085.1 MAG: Gammaproteobacteria bacterium isolate MFD15184.bin.s.14 
+genome assembly, chromosome: 1
+Length=3881723
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1        CCCCATGGTGTCTGAGCG  18
+                ||||||||||||||||||
+Sbjct  2044455  CCCCATGGTGTCTGAGCG  2044438
+
+
+>AY633612.1 Homo sapiens aging-associated gene 9 protein mRNA, complete cds
+Length=1115
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  30  CCCCATGGTGTCTGAGCG  13
+
+
+>BC002547.1 Homo sapiens dyskeratosis congenita 1, dyskerin, mRNA (cDNA clone 
+IMAGE:3138436), **** WARNING: chimeric clone ****
+Length=2875
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1     CCCCATGGTGTCTGAGCG  18
+             ||||||||||||||||||
+Sbjct  1656  CCCCATGGTGTCTGAGCG  1639
+
+
+>NR_152150.2 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase (GAPDH), 
+transcript variant 6, non-coding RNA
+Length=763
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  82  CCCCATGGTGTCTGAGCG  65
+
+
+>BC021020.1 Synthetic construct Homo sapiens cDNA clone IMAGE:3960143, **** 
+WARNING: chimeric clone ****
+Length=1999
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1    CCCCATGGTGTCTGAGCG  18
+            ||||||||||||||||||
+Sbjct  744  CCCCATGGTGTCTGAGCG  727
+
+
+>OZ508053.1 MAG: Pyrinomonadaceae bacterium isolate MFD15031.bin.c.3 genome 
+assembly, chromosome: 1
+Length=5264560
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  1       CCCCATGGTGTCTGAGCG  18
+               ||||||||||||||||||
+Sbjct  583879  CCCCATGGTGTCTGAGCG  583896
+
+
+>BC011866.1 Synthetic construct Homo sapiens cDNA clone IMAGE:4542413, **** 
+WARNING: chimeric clone ****
+Length=2480
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1     CCCCATGGTGTCTGAGCG  18
+             ||||||||||||||||||
+Sbjct  1239  CCCCATGGTGTCTGAGCG  1222
+
+
+>EU668321.1 Homo sapiens epididymis secretory sperm binding protein Li 162eP 
+(HEL-S-162eP) mRNA, complete cds
+Length=1310
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1    CCCCATGGTGTCTGAGCG  18
+            ||||||||||||||||||
+Sbjct  108  CCCCATGGTGTCTGAGCG  91
+
+
+>BC023632.2 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase, mRNA (cDNA 
+clone MGC:23503 IMAGE:4842418), complete cds
+Length=1307
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1   CCCCATGGTGTCTGAGCG  18
+           ||||||||||||||||||
+Sbjct  30  CCCCATGGTGTCTGAGCG  13
+
+
+>NG_007073.2 Homo sapiens glyceraldehyde-3-phosphate dehydrogenase (GAPDH), 
+RefSeqGene on chromosome 12
+Length=10880
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1     CCCCATGGTGTCTGAGCG  18
+             ||||||||||||||||||
+Sbjct  5348  CCCCATGGTGTCTGAGCG  5331
+
+
+>NG_125030.1 Homo sapiens NANOG-H3K27ac-H3K4me1 hESC enhancer GRCh37_chr12:6643463-6644236 
+(LOC127823509) on chromosome 12
+Length=974
+
+ Score = 36.2 bits (18),  Expect = 28
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1    CCCCATGGTGTCTGAGCG  18
+            ||||||||||||||||||
+Sbjct  642  CCCCATGGTGTCTGAGCG  625
+
+
+  Database: Core nucleotide BLAST database
+    Posted date:  Nov 8, 2026  1:19 AM
+  Number of letters in database: 1,094,251,079,178
+  Number of sequences in database:  132,660,980
+
+Lambda      K        H
+    1.37    0.711     1.31 
+Gapped
+Lambda      K        H
+    1.37    0.711     1.31 
+Matrix: blastn matrix:1 -3
+Gap Penalties: Existence: 5, Extension: 2
+Number of Sequences: 132660980
+Number of Hits to DB: 61519566
+Number of extensions: 2424
+Number of successful extensions: 2424
+Number of sequences better than 1000: 50
+Number of HSP's better than 1000 without gapping: 0
+Number of HSP's gapped: 2424
+Number of HSP's successfully gapped: 50
+Length of database: 1094251079178
+A: 0
+X1: 11 (21.8 bits)
+X2: 15 (29.7 bits)
+X3: 50 (99.1 bits)
+S1: 13 (26.3 bits)
+
+
