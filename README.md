@@ -62,6 +62,33 @@ python verify_candidate_sequences.py
 
 An internet connection is required for the NCBI-based scripts.
 
+## Live Website
+
+Try the deployed application here:
+
+https://primer-specificity-checker.onrender.com
+
+## How to Run Locally
+
+1. Clone or download this repository.
+2. Install the required dependencies:
+
+   pip install -r requirements.txt
+
+3. Run the application:
+
+   python app.py
+
+4. Open http://127.0.0.1:5000 in your browser.
+
+## Technologies Used
+
+- Python
+- Flask
+- HTML and CSS
+- NCBI E-utilities
+- NCBI BLAST
+
 ## Limitations
 - The analysis is limited to the BLAST hits returned by the search.
 - Potential PCR products are computational predictions.
