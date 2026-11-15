@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Specificity Checker 🧬</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e9ddff, #fce1ec, #dceeff);
+            margin: 0;
+            padding: 45px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: auto;
+            background: rgba(255,255,255,0.96);
+            padding: 38px;
+            border-radius: 22px;
+            box-shadow: 0 12px 35px rgba(100,75,130,0.13);
+        }
+
+        h1 {
+            color: #60458b;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #777080;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .emoji {
+            text-align: center;
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-top: 22px;
+            color: #59466f;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin-top: 9px;
+            border: 1.5px solid #e1d5ee;
+            border-radius: 11px;
+            min-height: 85px;
+            font-family: monospace;
+            font-size: 14px;
+            resize: vertical;
+            outline: none;
+            background: #fdfbff;
+        }
+
+        textarea:focus {
+            border-color: #a58acb;
+            box-shadow: 0 0 0 3px #eee5fa;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover { transform: translateY(-2px); }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+
+        .basic-button {
+            background: linear-gradient(90deg, #9273bd, #d18aaa);
+            color: white;
+        }
+
+        .blast-button {
+            background: linear-gradient(90deg, #557eae, #789bc5);
+            color: white;
+        }
+
+        .clear-button {
+            background: #f1edf6;
+            color: #705397;
+            border: 1px solid #e2d6f2;
+        }
+
+        .result {
+            margin-top: 28px;
+            padding: 20px;
+            background: #f3edfc;
+            border: 1px solid #e2d6f2;
+            border-radius: 13px;
+            line-height: 1.8;
+            color: #514268;
+            overflow-wrap: anywhere;
+        }
+
+        .result h3 { color: #705397; }
+
+        .error {
+            background: #fff0f2;
+            border-color: #f5ccd5;
+        }
+
+        .blast-result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #edf4ff;
+            border: 1px solid #d4e2f5;
+            border-radius: 13px;
+            color: #435875;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .blast-result h3 { color: #486b98; }
+
+        .candidate {
+            background: white;
+            border: 1px solid #dce5f2;
+            border-radius: 10px;
+            padding: 13px;
+            margin-top: 12px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #968ba1;
+            font-size: 12px;
+            margin-top: 25px;
+        }
+
+        .small-note {
+            font-size: 13px;
+            color: #777080;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="emoji">🧬 🔬 🧫</div>
+
+    <h1>Primer Specificity Checker</h1>
+
+    <p class="subtitle">
+        Welcome to your little bioinformatics lab! 💗<br>
+        Check primer binding and explore potential PCR cross-reactivity.
+    </p>
+
+    <form method="POST" id="primerForm">
+
+        <label>🧬 Forward Primer</label>
+        <textarea name="forward" id="forward"
+            placeholder="Enter forward primer sequence..."
+            required></textarea>
+
+        <label>🧬 Reverse Primer</label>
+        <textarea name="reverse" id="reverse"
+            placeholder="Enter reverse primer sequence..."
+            required></textarea>
+
+        <label>🔍 Target DNA Sequence</label>
+        <textarea name="target" id="target"
+            placeholder="Enter target DNA sequence..."
+            required></textarea>
+
+        <button type="submit" class="basic-button">
+            ✨ Check Target Primers
+        </button>
+
+        <button type="button" class="blast-button" id="blastButton">
+            🔬 Check Cross-Reactivity with NCBI BLAST
+        </button>
+
+        <button type="button" class="clear-button" id="clearButton">
+            🗑️ Clear All and Start New Test
+        </button>
+
+    </form>
+
+    {% if result %}
+        <div class="result {% if result.error %}error{% endif %}">
+            <h3>🧪 Target Analysis Results</h3>
+
+            {% if result.error %}
+                <p>{{ result.error }}</p>
+            {% else %}
+                <p>{{ result.message }}</p>
+
+                {% if result.forward_match is defined %}
+                    <p>Forward primer match:
+                        {{ "Yes" if result.forward_match else "No" }}
+                    </p>
+                    <p>Reverse primer match:
+                        {{ "Yes" if result.reverse_match else "No" }}
+                    </p>
+                {% endif %}
+
+                {% if result.product_size %}
+                    <p><strong>
+                        Potential product size: {{ result.product_size }} bp
+                    </strong></p>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div id="blastStatus" class="blast-result" hidden>
+        <h3>🔬 NCBI BLAST Analysis</h3>
+        <p id="statusMessage">Preparing your search...</p>
+        <div id="blastResults"></div>
+    </div>
+
+    <div class="footer">
+        Made with 💗 for biotechnology | Primer Specificity Project
+    </div>
+
+</div>
+
+<script>
+const fields = ["forward", "reverse", "target"];
+
+// Restore previously entered sequences
+fields.forEach(function(id) {
+    const field = document.getElementById(id);
+    const savedValue = localStorage.getItem("primer_" + id);
+
+    if (savedValue !== null) {
+        field.value = savedValue;
+    }
+
+    // Save whenever the user types or pastes
+    field.addEventListener("input", function() {
+        localStorage.setItem("primer_" + id, field.value);
+    });
+});
+
+// Clear inputs, saved sequences and previous results
+document.getElementById("clearButton").addEventListener("click", function() {
+    fields.forEach(function(id) {
+        localStorage.removeItem("primer_" + id);
+    });
+
+    window.location.href = "/";
+});
+
+const blastButton = document.getElementById("blastButton");
+const statusBox = document.getElementById("blastStatus");
+const statusMessage = document.getElementById("statusMessage");
+const blastResults = document.getElementById("blastResults");
+
+blastButton.addEventListener("click", async function() {
+
+    const forward = document.getElementById("forward").value;
+    const reverse = document.getElementById("reverse").value;
+
+    if (!forward.trim() || !reverse.trim()) {
+        alert("Please enter both primer sequences first.");
+        return;
+    }
+
+    blastButton.disabled = true;
+    blastButton.textContent = "⏳ Submitting to NCBI...";
+    statusBox.hidden = false;
+    blastResults.innerHTML = "";
+
+    statusMessage.textContent =
+        "Submitting both primers to NCBI BLAST. This may take a few minutes.";
+
+    try {
+        const formData = new FormData();
+        formData.append("forward", forward);
+        formData.append("reverse", reverse);
+
+        const response = await fetch("/start-blast", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Could not start BLAST search.");
+        }
+
+        const jobId = data.job_id;
+        let finished = false;
+
+        statusMessage.textContent =
+            "NCBI is processing your search. Please keep this page open.";
+
+        while (!finished) {
+            await new Promise(resolve => setTimeout(resolve, 10000));
+
+            const statusResponse = await fetch(
+                "/blast-status/" + encodeURIComponent(jobId)
+            );
+
+            const statusData = await statusResponse.json();
+
+            if (!statusResponse.ok) {
+                throw new Error(statusData.error || "Could not retrieve search status.");
+            }
+
+            statusMessage.textContent = statusData.message;
+
+            if (statusData.status === "complete") {
+                finished = true;
+
+                const analysis = statusData.analysis;
+
+                let html = `
+                    <p><strong>Forward primer hits:</strong> ${analysis.forward_count}</p>
+                    <p><strong>Reverse primer hits:</strong> ${analysis.reverse_count}</p>
+                    <p><strong>Common accessions:</strong> ${analysis.common_count}</p>
+                    <h3>🧬 Potential PCR Product Candidates</h3>
+                `;
+
+                if (analysis.products.length === 0) {
+                    html += `<p>No suitable paired primer arrangement was found among the parsed BLAST hits.</p>`;
+                }
+
+                analysis.products.forEach(function(item, index) {
+                    html += `
+                        <div class="candidate">
+                            <strong>Candidate ${index + 1}</strong>
+                            <p><strong>Accession:</strong> ${escapeHTML(item.accession)}</p>
+                            <p><strong>Sequence:</strong> ${escapeHTML(item.description)}</p>
+                            <p><strong>Forward position:</strong> ${escapeHTML(item.forward_position)}</p>
+                            <p><strong>Reverse position:</strong> ${escapeHTML(item.reverse_position)}</p>
+                            <p><strong>Forward identity:</strong> ${escapeHTML(item.forward_identity)}</p>
+                            <p><strong>Reverse identity:</strong> ${escapeHTML(item.reverse_identity)}</p>
+                            <p><strong>Potential product size:</strong> ${item.product_size} bp</p>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <p class="small-note">
+                        ⚠️ Preliminary computational results only.
+                        BLAST matches do not prove experimental amplification.
+                        Results are limited to the returned database hits.
+                    </p>
+                `;
+
+                blastResults.innerHTML = html;
+                statusMessage.textContent = "✅ NCBI BLAST analysis completed!";
+                blastButton.textContent = "🔬 Run BLAST Again";
+
+            } else if (statusData.status === "error") {
+                throw new Error(statusData.message);
+            }
+        }
+
+    } catch (error) {
+        statusMessage.textContent = "❌ " + error.message;
+        blastButton.textContent = "🔬 Try BLAST Again";
+
+    } finally {
+        blastButton.disabled = false;
+    }
+});
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function(character) {
+        return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        }[character];
+    });
+}
+</script>
+
+</body>
+</html>
