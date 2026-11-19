@@ -282,26 +282,73 @@ def run_blast(job_id, forward, reverse):
         )
 
         with urllib.request.urlopen(req, timeout=60) as response:
-            submission = response.read().decode("utf-8")
+            submission = response.read().decode(
+                "utf-8", errors="replace"
+            )
+
+            # DIAGNOSTIC LOGGING
+            # This helps us understand why NCBI
+            # is not returning a BLAST request ID.
+            print(
+                "NCBI HTTP STATUS:",
+                response.status,
+                flush=True
+            )
+
+            print(
+                "NCBI CONTENT TYPE:",
+                response.headers.get("Content-Type"),
+                flush=True
+            )
+
+        print(
+            "========== NCBI BLAST RESPONSE START ==========",
+            flush=True
+        )
+
+        print(
+            submission[:2000],
+            flush=True
+        )
+
+        print(
+            "========== NCBI BLAST RESPONSE END ==========",
+            flush=True
+        )
 
         rid_match = re.search(r"RID\s*=\s*(\S+)", submission)
         rtoe_match = re.search(r"RTOE\s*=\s*(\d+)", submission)
 
         if not rid_match:
-            raise Exception("NCBI did not return a BLAST request ID.")
+            print(
+                "ERROR: No BLAST RID found in NCBI response.",
+                flush=True
+            )
+            raise Exception(
+                "NCBI did not return a BLAST request ID."
+            )
 
         rid = rid_match.group(1)
 
+        print(
+            "NCBI BLAST RID received:",
+            rid,
+            flush=True
+        )
+
         blast_jobs[job_id]["rid"] = rid
         blast_jobs[job_id]["status"] = "waiting"
-        blast_jobs[job_id]["message"] = "NCBI is processing your search."
+        blast_jobs[job_id]["message"] = (
+            "NCBI is processing your search."
+        )
 
         estimated_time = (
             int(rtoe_match.group(1))
             if rtoe_match else 60
         )
 
-        # Check BLAST status no more frequently than once per minute
+        # Check BLAST status no more frequently
+        # than once per minute
         status = "WAITING"
 
         for attempt in range(10):
@@ -337,9 +384,17 @@ def run_blast(job_id, forward, reverse):
             )
 
             if not status_match:
-                raise Exception("Could not read NCBI search status.")
+                raise Exception(
+                    "Could not read NCBI search status."
+                )
 
             status = status_match.group(1)
+
+            print(
+                "NCBI BLAST STATUS:",
+                status,
+                flush=True
+            )
 
             blast_jobs[job_id]["message"] = (
                 f"NCBI search status: {status}"
@@ -357,7 +412,8 @@ def run_blast(job_id, forward, reverse):
 
         if status != "READY":
             raise Exception(
-                "BLAST is taking longer than expected. Please try again later."
+                "BLAST is taking longer than expected. "
+                "Please try again later."
             )
 
         # Retrieve completed BLAST report
@@ -433,10 +489,23 @@ def run_blast(job_id, forward, reverse):
             file.write("\n".join(report))
 
         blast_jobs[job_id]["status"] = "complete"
-        blast_jobs[job_id]["message"] = "BLAST analysis completed."
+        blast_jobs[job_id]["message"] = (
+            "BLAST analysis completed."
+        )
         blast_jobs[job_id]["analysis"] = analysis
 
+        print(
+            "BLAST analysis completed successfully.",
+            flush=True
+        )
+
     except Exception as error:
+
+        print(
+            "BLAST ERROR:",
+            str(error),
+            flush=True
+        )
 
         blast_jobs[job_id]["status"] = "error"
         blast_jobs[job_id]["message"] = str(error)
@@ -484,7 +553,10 @@ def start_blast():
         or not set(reverse).issubset(set("ATGC"))
     ):
         return jsonify({
-            "error": "Please enter valid forward and reverse primers using A, T, G and C."
+            "error": (
+                "Please enter valid forward and reverse "
+                "primers using A, T, G and C."
+            )
         }), 400
 
     job_id = str(uuid.uuid4())
@@ -512,7 +584,10 @@ def blast_status(job_id):
 
     if not job:
         return jsonify({
-            "error": "Search not found. Please start a new search."
+            "error": (
+                "Search not found. "
+                "Please start a new search."
+            )
         }), 404
 
     return jsonify(job)
